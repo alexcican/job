@@ -1,0 +1,24 @@
+@font-face{font-family:'signpainter';src:url('./fonts/signpainter.eot');src:url('./fonts/signpainter.eot?#iefix') format('embedded-opentype'),url('./fonts/signpainter.woff') format('woff'),url('./fonts/signpainter.ttf') format('truetype'),url('./fonts/signpainter.svg#signpainter') format('svg');font-weight:normal;font-style:normal}
+img,embed,object,video{max-width:100%}body{font-family:"Helvetica Neue",Helvetica,sans-serif;-webkit-font-smoothing:antialiased;font-size:16px;line-height:1.6;background:#fff;color:#555;margin:0}
+::-moz-selection{background:#555;color:#fff;text-shadow:none}::selection{background:#555;color:#fff;text-shadow:none}a,a:visited,img,input,footer{-moz-transition:color .3s,background .3s,opacity .3s,border .3s;-webkit-transition:color .3s,background .3s,opacity .3s,border .3s;-o-transition:color .3s,background .3s,opacity .3s,border .3s;transition:color .3s,background .3s,opacity .3s,border .3s}
+a,a:visited,footer:hover a,footer:hover a:visited{color:#39c;text-decoration:none}a:hover,a:visited:hover,footer a:hover,footer a:visited:hover{color:#555;cursor:pointer;text-decoration:underline}
+a.img:hover img{-moz-transform:scale(1.03);-webkit-transform:scale(1.03);-o-transform:scale(1.03);transform:scale(1.03)}a.img img{-moz-transition:all .3s;-webkit-transition:all .3s;-o-transition:all .3s;transition:all .3s}
+a.img,a.img:hover{text-decoration:none;overflow:hidden;display:inline-block}.button a{background:#39c;text-align:center;color:#fff;padding:.7em;display:block}
+.button a:hover{color:#39c;text-decoration:none;background:#eee}h1,h2.heading{font-size:2em;line-height:1.2;font-weight:300}h2,h3{font-size:1.5em;font-weight:300;line-height:1.6;padding-top:.4em;margin-bottom:-0.1em}
+p+p{padding-top:.8em 0}ul,ol{padding:.4em 0;list-style-type:circle}ul li,ol li{margin-left:1.2em;padding-left:.5em}#home-slides{font-family:'Raleway',sans-serif;font-weight:400;font-size:2.4em;line-height:1}
+.not-mobile div{-webkit-background-size:cover!important;-moz-background-size:cover!important;-o-background-size:cover!important;background-size:cover!important}
+#home-slides div{height:500px;position:relative;width:100%}#home-slides p{position:absolute;top:38%;left:0;width:100%;text-align:center;text-shadow:0 0 11px rgba(255,255,255,0.6);color:#fff}
+#home-slides span{font-size:1.4em;font-family:'signpainter',Helvetica,sans-serif;color:#e42186;text-shadow:0 0 11px rgba(228,153,206,0.6)}
+#home-slides div:nth-of-type(1){background:url("../images/alex-bg.jpg") 50% 0 no-repeat fixed}#home-slides div:nth-of-type(1) a{color:#e42186}
+#home-slides div:nth-of-type(2){background:url("../images/bud-bg.jpg") 50% 0 no-repeat fixed}#home-slides div:nth-of-type(3){background:url("../images/par-bg.jpg") 50% 0 no-repeat fixed}
+#home-slides div:nth-of-type(3) p{color:#111}#content{width:95%;max-width:650px;margin:2.4em auto}section.designs{position:relative;margin-top:1.6em;text-align:center}
+.designs button.previous,.designs button.next{display:block;position:absolute;top:25%;left:-5%;background:transparent;border:0;cursor:pointer;width:15%;padding:5%}
+.designs button.next{left:auto;right:0;width:15%}.designs button.previous:before,.designs button.next:before{content:'<';font-size:4.5em;color:#ccc}
+.designs button.next:before{content:'>'}.designs button.previous:hover:before,.designs button.next:hover:before{color:#666}
+.above_footer{padding-top:2em;text-align:center}.above_footer h4{font-size:4em;margin:0 0 -0.3em}.above_footer h5{font-size:1.2em;margin:0}footer{padding:1.6em 0 0;font-size:.875em;opacity:.3;text-align:center}
+footer:hover{opacity:1}footer a,footer a:visited{color:#555}#print{color:#333;display:none}@media screen and (min-width:768px){body{font-size:20px}h1,h2.heading{font-size:3em;font-weight:100}
+h2,h3{font-size:1.6em}#home-slides{font-weight:100;font-size:3.8em}#home-slides p{text-align:left;left:10%;width:70%}.designs button.previous,.designs button.next{left:-15%}
+.designs button.next{left:auto;right:-14.5%}footer{padding-top:3.2em}}@media screen and (min-width:1024px){#home-slides{font-size:4em}#home-slides p{width:55%}
+#home-slides div:nth-of-type(1){background:url("../images/alex-bg@2x.jpg") 50% 0 no-repeat fixed}#home-slides div:nth-of-type(2){background:url("../images/bud-bg@2x.jpg") 50% 0 no-repeat fixed}
+#home-slides div:nth-of-type(3){background:url("../images/par-bg@2x.jpg") 50% 0 no-repeat fixed}.designs{width:1000px;margin-left:-27%}.designs button.previous,.designs button.next{top:35%}
+footer{padding-bottom:0}}.swipe{overflow:hidden;visibility:hidden;position:relative}.swipe-wrap{overflow:hidden;position:relative}.swipe-wrap>div{float:left;width:100%;position:relative}

@@ -1,0 +1,808 @@
+/*** GLOBAL ***/
+/**************/
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+@font-face {
+	font-family: 'proxima-nova';
+	src: url('./fonts/proximanova-regular-webfont.eot');
+	src: url('./fonts/proximanova-regular-webfont.eot?#iefix') format('embedded-opentype'),
+				url('./fonts/proximanova-regular-webfont.woff') format('woff'),
+				url('./fonts/proximanova-regular-webfont.ttf') format('truetype'),
+				url('./fonts/proximanova-regular-webfont.svg#proxima-nova') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'proxima-nova-bold';
+	src: url('./fonts/proximanova-bold-webfont.eot');
+	src: url('./fonts/proximanova-bold-webfont.eot?#iefix') format('embedded-opentype'),
+				url('./fonts/proximanova-bold-webfont.woff') format('woff'),
+				url('./fonts/proximanova-bold-webfont.ttf') format('truetype'),
+				url('./fonts/proximanova-bold-webfont.svg#proxima-nova-bold') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'fontello';
+	src: url('./fonts/fontello.eot');
+	src: url('./fonts/fontello.eot?#iefix') format('embedded-opentype'),
+				url('./fonts/fontello.woff') format('woff'),
+				url('./fonts/fontello.ttf') format('truetype'),
+				url('./fonts/fontello.svg#fontello') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+img, embed, object, video {
+	max-width: 100%;
+}
+
+body {
+	font-family: "proxima-nova", Helvetica, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	font-size: 14px;
+	line-height: 1.6em;
+	background: #2b2b2b;
+	color: #f2f2f2;
+}
+
+::-moz-selection {
+	background: #fff;
+	color: #000;
+	text-shadow: none;
+}
+
+::selection {
+	background: #fff;
+	color: #000;
+	text-shadow: none;
+}
+
+/* smooth animations */
+a, a:visited, span, input, footer {
+	-moz-transition: color 0.5s, background 0.5s, border 0.5s, opacity 0.5s;
+	-webkit-transition: color 0.5s, background 0.5s, border 0.5s, opacity 0.5s;
+	-o-transition: color 0.5s, background 0.5s, border 0.5s, opacity 0.5s;
+	transition: color 0.5s, background 0.5s, border 0.5s, opacity 0.5s;
+}
+
+a, a:visited, footer:hover a, footer:hover a:visited, .reload_message:hover a, .reload_message:hover a:visited {
+	color: #5b93bf;
+	text-decoration: none;
+}
+
+a:hover, a:visited:hover, #header h1 a:hover, .last h5 a:hover, footer a:hover, footer a:visited:hover, .reload_message a:hover, .reload_message a:visited:hover {
+	color: #e1363f;
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+/* on hover, zoom thumb image */
+a.img:hover img {
+	-moz-transform: scale(1.03);
+	-webkit-transform: scale(1.03);
+	-o-transform: scale(1.03);
+	transform: scale(1.03);
+}
+
+/* smooth animations */
+a.img img {
+	-moz-transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	-o-transition: all 0.5s;
+	transition: all 0.5s;
+}
+
+/* contain the zoomed thumb inside a element */
+a.img, a.img:hover {
+	text-decoration: none;
+	overflow: hidden;
+	display: inline-block;
+}
+
+#container {
+	width: 95%;
+	max-width: 600px;
+	margin: 0 auto;
+}
+
+/*** TYPOGRAPHY ***/
+/******************/
+
+h1 {
+	font-family: "proxima-nova-bold", "Open Sans", Helvetica, sans-serif;
+	font-size: 3em;
+	line-height: 1em;
+	font-weight: 100;
+}
+
+h2, h3 {
+	font-family: "proxima-nova-bold", "Open Sans", Helvetica, sans-serif;
+	font-size: 1.2em;
+	font-weight: 100;
+	line-height: 1.6em;
+	margin-bottom: -0.6em;
+	padding: 1.1em 0 0;
+}
+
+p {
+	padding: 0.35em 0;
+}
+
+h4, h5, strong, #first p {
+	font-family: "proxima-nova-bold";
+	font-weight: normal;
+}
+
+ul, ol {
+	padding: 0.9em 0;
+	list-style-type:circle;
+}
+
+ul li, ol li {
+	margin-left: 1.15em;
+	padding-left: 0.4em;
+}
+
+/*** HEADER ***/
+/**************/
+
+/* styles the reload message */
+.reload_message {
+	text-align: center;
+	padding: 0.4em;
+	margin-bottom: -0.8em;
+}
+
+.reload_message a, .reload_message a:visited {
+	color: #f2f2f2;
+	display: inline-block;
+	padding: 0.3em 0;
+}
+
+#header {
+	padding-top: 1.6em;
+}
+
+#header h1 a {
+	color: #f2f2f2;
+}
+
+/* adds padding to sub header */
+#header h2 {
+	letter-spacing: 0;
+	padding: 0.4em 0 0.8em;
+}
+
+/* brings break back */
+#header br {
+	display: none;
+}
+
+/* smaller avatar */
+#header p {
+	width: 105px;
+	height: 105px;
+	float: right;
+}
+
+#header p img {
+	-moz-border-radius: 75px;
+	-webkit-border-radius: 75px;
+	-khtml-border-radius: 75px;
+	border-radius: 75px;
+}
+
+/*** CONTENT ***/
+/**************/
+
+/* adds spacing between content divs */
+#content>div {
+	margin: 2.4em 0;
+}
+
+/* styles the each section's title */
+#content h3 {
+	font-size: 1em;
+	background: #e1363f;
+	padding: 0.2em 0.3em;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	display: inline;
+}
+
+/* moves text under section title down */
+#content h3+p {
+	margin-top: 0.3em;
+}
+
+/* adds some border-radius to h3 and portfolio images */
+#content h3, .center div img {
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+}
+
+/* mayan calendar */
+#first {
+	position: relative;
+	text-align: center;
+	background: #2b2b2b;
+}
+
+.calendar {
+	position: relative;
+}
+
+/* adds the Twitter logo */
+.calendar:after {
+	content: "t";
+	font-family: "fontello", serif;
+	position: absolute;
+	width: 100%;
+	left: 1%;
+	text-align: center;
+	top: 43.5%;
+	font-size: 1.9em;
+	text-transform: lowercase;
+	color: #fffbf6;
+	text-shadow: 0 2px 3px #8a5012;
+}
+
+/* adds CSS generated circle to hide jagged edges of gif image */
+.calendar img {
+	width: 300px;
+	height: 300px;
+	-moz-border-radius: 175px;
+	-webkit-border-radius: 175px;
+	-khtml-border-radius: 175px;
+	border-radius: 175px;
+	-moz-animation: rotate 4.4s 0 1 linear;
+	-webkit-animation: rotate 4.4s 0 1 linear;
+	-o-animation: rotate 4.4s 0 1 linear;
+	animation: rotate 4.4s 0 1 linear;
+}
+
+@-moz-keyframes rotate {
+	from {-moz-transform: rotate(330deg);}
+	to {-moz-transform: rotate(360deg);}
+}
+
+@-webkit-keyframes rotate {
+	from {-webkit-transform: rotate(330deg);}
+	to {-webkit-transform: rotate(360deg);}
+}
+
+@-o-keyframes rotate {
+	from {-o-transform: rotate(330deg);}
+	to {-o-transform: rotate(360deg);}
+}
+
+@keyframes rotate {
+	from {transform: rotate(330deg);}
+	to {transform: rotate(360deg);}
+}
+
+/* styles the word "END" */
+#first p span {
+	padding-top: 0.1em;
+	font-size: 3.75em;
+	line-height: 0.6em;
+	color: #e1363f;
+	display: block;
+	text-transform: uppercase;
+}
+
+/* text of Mayan calendar div */
+#first p {
+	font-size: 1.6em;
+	text-transform: uppercase;
+	line-height: 1.6em
+}
+
+/* "nope" word */
+#first.show:before {
+	font-family: cursive;
+	font-style: italic;
+	content: "nope";
+	font-size: 1.8em;
+	-moz-transform:rotate(-15deg);
+	-webkit-transform:rotate(-15deg);
+	-ms-transform:rotate(-15deg);
+	-o-transform:rotate(-15deg);
+	transform:rotate(-15deg);
+	left: 83%;
+	bottom: 20%;
+	position: absolute;
+	color: #d49c60;
+}
+
+/* write-out line */
+#first.show:after {
+	content: "";
+	width: 55%;
+	height: 20px;
+	left: 23%;
+	bottom: 2.9em;
+	position: absolute;
+	border-top: solid 4px #d49c60;
+	-moz-transform:rotate(-25deg);
+	-webkit-transform:rotate(-25deg);
+	-ms-transform:rotate(-25deg);
+	-o-transform:rotate(-25deg);
+	transform:rotate(-25deg);
+}
+
+/* hides the strikethrough text before loading */
+#first:before, #first:after {
+	content: "";
+}
+
+/* adds spacing between portfolio divs */
+#content div>div {
+	margin: 1em 0;
+}
+
+/* moves text under portfolio images up */
+#content a+p {
+	margin-top: -0.4em;
+}
+
+/* centers text of last div */
+.last {
+	text-align: center;
+}
+
+/* styles big headline */
+.last h4 {
+	font-size: 3.75em;
+	line-height: 1em;
+	color: #e1363f;
+	text-transform: uppercase;
+}
+
+/* bigger font size for sub-headline */
+.last h5 {
+	font-size: 1.15em;
+	text-transform: uppercase;
+	padding-bottom: 0.8em;
+}
+
+/* no link colour on contact links */
+.last h5 a {
+	color: #f2f2f2;
+}
+
+/*** FOOTER ***/
+/**************/
+
+footer {
+	margin-top: -0.3em;
+	padding-bottom: 1.6em;
+	font-size: 0.875em;
+	line-height: 1.6em;
+	-moz-opacity: 0.2;
+	-webkit-opacity: 0.2;
+	filter:alpha(opacity=20);
+	opacity: 0.2;
+	text-align: center;
+}
+
+footer:hover {
+	-moz-opacity: 1;
+	-webkit-opacity: 1;
+	filter:alpha(opacity=100);
+	opacity: 1;
+}
+
+footer a, footer a:visited {
+	color: #f2f2f2;
+}
+
+#print {
+	font-family: "proxima-nova-bold", Helvetica, sans-serif;
+	color: #333;
+	display: none;
+}
+
+
+
+/*** ABOVE 768px ***/
+/*******************/
+
+
+@media screen and (min-width: 768px){
+	body {
+		font-size: 1em;
+	}
+
+	#container {
+		max-width: 800px;
+		width: 90%;
+		padding-top: 2.4em;
+	}
+
+	/*** TYPOGRAPHY ***/
+	/******************/
+
+	h1 {
+		font-size: 5.8em;
+		letter-spacing: -0.03em;
+	}
+
+	h2, h3 {
+		font-size: 1.35em;
+		padding: 1.1em 0 0.6em;
+		letter-spacing: -0.05em;
+	}
+
+	/*** HEADER ***/
+	/**************/
+
+	/* moves the reload message */
+	.reload_message {
+		font-size: 0.875em;
+		padding: 0.8em;
+		margin-bottom: -2.4em;
+	}
+
+	#header {
+		padding-top: 2.4em;
+		margin-bottom: -2.4em;
+	}
+
+	/* brings break back */
+	#header br {
+		display: block;
+	}
+
+	/* bigger avatar */
+	#header p {
+		width: 150px;
+		height: 150px;
+	}
+
+	/* styles the h2 for the arrow */
+	#header h2 {
+		display: block;
+		position: relative;
+		width: 80%;
+	}
+
+	/* arrow pointing at avatar */
+	#header h2:after {
+		content: "";
+		background: url("../images/arrow.svg") no-repeat;
+		background-size: 70px 21px;
+		width: 70px;
+		height: 21px;
+		position: absolute;
+		top: 1.5em;
+		right: -0.3em;
+	}
+
+	/*** CONTENT ***/
+	/***************/
+
+	#content {
+		position: relative;
+	}
+
+	/* styles the central line of timeline */
+	#content.timeline:after {
+		content: "";
+		background: #383535;
+		width: 2px;
+		height: 94%;
+		position: absolute;
+		left: 49.9%;
+		top: 0.3%;
+		z-index: -1;
+	}
+
+	/* adds spacing between content divs */
+	#content>div {
+		margin: 5.6em 0;
+	}
+
+	/* styles the each section's title */
+	#content h3 {
+		font-size: 0.875em;
+	}
+
+	#content h3+p {
+		margin-top: 0.3em;
+	}
+
+	/* "nope" word */
+	#first.show:before {
+		left: 70%;
+	}
+
+	/* write-out line */
+	#first.show:after {
+		width: 35%;
+		left: 34%;
+	}
+
+	/* left and right divs have same width */
+	.left, .right {
+		width: 48%;
+		position: relative;
+	}
+
+	/* the red line that connects the timeline */
+	.timeline .left:before, .timeline .right:before, .timeline .center:before, .timeline #first h3:before {
+		content: "";
+		display: block;
+		width: 100%;
+		height: 2px;
+		background: #e1363f;
+		position: absolute;
+		top: 0.8em;
+		right: -1em;
+		z-index: -1;
+	}
+
+	/* the red dot on center of timeline */
+	.timeline .left:after, .timeline .right:after, .timeline .center h3:after, .timeline #first h3:after {
+		content: "";
+		background: #e1363f;
+		width: 6px;
+		height: 6px;
+		display: block;
+		position: absolute;
+		top: 0.68em;
+		left: 103.5%;
+		-moz-box-shadow: 0 0 0 2px #2b2b2b;
+		-webkit-box-shadow: 0 0 0 2px #2b2b2b;
+		box-shadow: 0 0 0 2px #2b2b2b;
+		-moz-border-radius: 3px;
+		-webkit-border-radius: 3px;
+		-khtml-border-radius: 3px;
+		border-radius: 3px;
+	}
+
+	.timeline .right:before {
+		right: 0;
+		left: -1em;
+		width: 50%;
+	}
+
+	.timeline .right:after {
+		left: -5.6%;
+	}
+
+	.timeline .center:before {
+		top: 0;
+		left: 49.9%;
+		width: 2px;
+		height: 20px;
+		z-index: 1;
+	}
+
+	.timeline .center h3:after {
+		left: 49.6%;
+		top: 0;
+		z-index: 1;
+	}
+
+	.timeline #first h3 {
+		position: relative;
+	}
+
+	/* red line extends under the Mayan calendar as well */
+	.timeline #first h3:before {
+		top: auto;
+		bottom: 100%;
+		right: 49.9%;
+		width: 2px;
+		height: 20px;
+		z-index: 1;
+	}
+
+	/* the red dot */
+	.timeline #first h3:after {
+		top: -100%;
+		left: 48%;
+		z-index: 1;
+	}
+
+	/* adds end flourish on centered divs */
+	.timeline .center:after {
+		content: "";
+		width: 16px;
+		height: 2px;
+		background: #383535;
+		position: absolute;
+		bottom: 0;
+		left: 48.8%;
+	}
+
+	/* moves right class div to right and removes top margin (has float) */
+	.right {
+		float: right;
+		margin-top: 0 !important;
+	}
+
+	/* centers text in central divs */
+	.center {
+		text-align: center;
+		background: #2b2b2b;
+		clear: both;
+		position: relative;
+		padding-bottom: 0.4em;
+		padding-top: 1em;
+		margin-top: 3em;
+		overflow: hidden;
+	}
+
+	.center div {
+		height: 100%;
+	}
+
+	/* no bottom padding for Mayan container (already enough padding) */
+	.center #first {
+		padding-bottom: 0;
+	}
+
+	/* bigger font size for sub-headline */
+	#first p {
+		font-size: 1.75em;
+	}
+
+	/* styles the word "END" */
+	#first p span {
+		font-size: 3.571em; /* 3.571em / 1.75em = 100px (not body em, inherited from "#first p" em) */
+		padding-bottom: 0.05em;
+	}
+
+	/* moves the Twitter logo */
+	.calendar:after {
+		left: 0.5%;
+		top: 42.5%;
+		font-size: 2em;
+	}
+
+	/* bigger Mayan calendar image */
+	.calendar img {
+		width: 349px;
+		height: 349px;
+	}
+
+	/* the h3 section title of portfolio is block because of portfolio images floated */
+	#content div:nth-last-child(4) h3 {
+		width: 10.8em;
+		display: block !important;
+		margin: 0 auto 0.6em;
+		padding: 0;
+	}
+
+	/* portfolio divs */
+	.center div {
+		width: 48%;
+		float: left;
+		text-align: left;
+	}
+
+	/* portfolio right divs floated to the right */
+	.center div:nth-child(2n+1) {
+		float: right;
+	}
+
+	/* no end flourish on last centered div */
+	#content div:nth-last-child(2):after {
+		width: 0;
+	}
+
+	/* styles big headline */
+	.last h4 {
+		font-size: 5.8em;
+	}
+
+	/* bigger font size for sub-headline */
+	.last h5 {
+		font-size: 1.75em;
+	}
+}
+
+
+
+
+/*** ABOVE 1024px ***/
+/*******************/
+
+
+@media screen and (min-width: 1024px){
+	body {
+		font-size: 17px;
+		line-height: 1.7em;
+	}
+
+	h1 {
+		font-size: 5.882em;
+	}
+
+	h2, h3 {
+		font-size: 1.4em;
+		line-height: 1.8em;
+	}
+
+	#container {
+		padding-top: 4.8em;
+	}
+
+	/*** HEADER ***/
+	/**************/
+
+	/* moves the reload message */
+	.reload_message {
+		margin-bottom: -3.2em;
+	}
+
+	/* bigger arrow */
+	#header h2:after {
+		background-size: 85px 24px;
+		width: 85px;
+		height: 24px;
+	}
+
+	/* moves avatar down */
+	#header p {
+		margin-top: 1.3em;
+	}
+
+	/*** CONTENT ***/
+	/***************/
+
+	/* styles the word "END" */
+	#first p span {
+		padding-bottom: 0.08em;
+	}
+
+	/* aligns bullets from timeline */
+	.timeline .left:after {
+		left: 103.6%;
+	}
+
+	.timeline .right:after {
+		left: -4.95%;
+	}
+
+	.timeline .center h3:after {
+		left: 49.7%;
+	}
+
+	/* moves bullet to the left for Chrome */
+	.chrome .center h3:after {
+		left: 49.6%;
+	}
+
+	.timeline #first h3:after {
+		left: 48.3%;
+	}
+
+	/* moves bullet to the left for Chrome */
+	.chrome #first h3:after {
+		left: 48%;
+	}
+
+	/* aligns the flourish at the end of center divs */
+	.timeline .center:after {
+		left: 49%;
+	}
+
+	/* smaller width for portfolio images */
+	#content div>div {
+		width:47%;
+	}
+
+	/*** FOOTER ***/
+	/**************/
+}

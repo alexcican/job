@@ -1,0 +1,59 @@
+body, #content {
+	font-size: 10pt !important;
+	color: #111 !important;
+	width: 100%;
+	margin-top: 2em;
+}
+
+strong {
+	color: #333 !important;
+}
+
+.hide, nav, footer {
+	display: none !important;
+}
+
+a:link, a:visited {
+	color: #3679af;
+	text-decoration: underline;
+}
+
+body img {
+	width: 99%;
+}
+
+h1 {
+	font-size: 3.2em;
+}
+
+#header h2 {
+	font-size: 1.5em;
+	margin: -0.6em 0 -1em;
+}
+
+#header, #header h1, #header h2 {
+	color: #333;
+}
+
+h3 {
+	font-size: 1.5em;
+	margin: 0 0 -0.3em;
+	color: #333;
+}
+
+#header h1:after {
+	content: " alex@sicanstudios.com";
+	-moz-opacity: 0.15;
+	-webkit-opacity: 0.15;
+	filter:alpha(opacity=15);
+	opacity: 0.15;
+}
+
+#header {
+	margin-bottom: -0.8em;
+}
+
+#print {
+	padding-top: 1.6em;
+	display: block !important;
+}

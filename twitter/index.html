@@ -1,0 +1,304 @@
+﻿<!doctype html>
+
+<head>
+  <title>Hi, I&#8217;m Alex.</title>    
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta http-equiv="content-language" content="en-gb" />
+  <link rel="shortcut icon" href="http://sicanstudios.com/images/favicon.ico" />
+  <meta name="copyright" content="Copyright by Alex Cican. 2013" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="Author" content="Alex Cican" />
+  <meta name="viewport" content="width=device-width"/>
+  <link rel="stylesheet" type="text/css" href="./style/style.css" />
+  <!-- Loads jQuery script in head; required for fading in elements before loading page -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+  <!-- Loads jQuery script for cookies -->
+  <script src="./javascript/cookies.js"></script>
+  <script>
+    $(document).ready(function() {
+      var cookie_mesage = $.cookie('welcome');
+
+      /* reset cookies link */
+      var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+      /* smaller reload message for mobile (placed here because not triggered in footer) */
+      if (width < "768") { 
+        $('body').prepend('<p class="reload_message">Welcome back. Want to <a href="#first" title="replay animation" class="reload">replay animation</a>?</p>');
+      } else {
+        $('body').prepend('<p class="reload_message">It looks like you&#8217;ve visited this website before. Do you want to <a href="#first" title="replay animation" class="reload">replay the intro animation</a>?</p>');
+      }
+
+      /* hides text and fades it in */
+      $(".reload_message").fadeTo(0, 0);
+      $(".reload_message").delay(1000).animate({opacity: 0.2}, 400);
+      $(".reload_message").hover(function(){$(this).stop(true).animate({opacity: 1}, 400);}, function(){$(this).stop(true).animate({opacity: 0.2}, 400);});
+
+      /* on reload link click hide text, check if clicked, change cookie attribute and refresh website */
+      $(".reload").click(function() {
+        $("html, body").fadeTo(0, 0);
+        var $this = $(this);
+        if ($this.hasClass('clicked')) {
+        /* else means that link wasn't clicked */
+        } else {
+          $(this).addClass('clicked');
+          $.cookie('welcome', 'animate');
+        }
+        location.reload();
+      });
+
+      /* if user visited before, don't load animated content */
+      if (cookie_mesage == 'not_animated') {
+        $("body").removeClass("animated");
+        $("#content").addClass("timeline");
+        $("#first").addClass("show");
+
+      /* else means user is for the first time; load animations */
+      } else {
+        $("body").addClass("animated");
+        $(".reload_message").hide();
+
+        /* hides each element individually to be faded it after */
+        $("#first, #first h3, #first p:last-child, .left, .right, .last, .center, #header, footer").fadeTo(0, 0);
+
+        /* scrolls to the Mayan calendar */
+        window.setTimeout(function(){$('html, body').animate({scrollTop: $("#first").offset().top}, 0);}, 100);
+
+        /* shows the calendar, then the text, then the text strikethrough, then scroll up and show all the other elements */
+        $("#first").delay(200).animate({opacity: 1}, 800);
+        $("#first h3").delay(1800).animate({opacity: 1}, 800);
+        $("#first p:last-child").delay(2700).animate({opacity: 1}, 800);
+        window.setTimeout(function(){$("#first").addClass("show");}, 4800);
+        window.setTimeout(function(){$('html, body').animate({scrollTop: 0}, 1400);}, 5800);
+        $(".left, .right, .last, .center, #header").delay(5800).animate({opacity: 1}, 1000);
+        window.setTimeout(function(){$("#content").addClass("timeline");}, 5900);
+
+        /* shows footer but also replaces CSS values on hover for opacity */
+        $("footer").delay(6000).animate({opacity: 0.2}, 800);
+        $("footer").hover(function(){$(this).stop(true).animate({opacity: 1}, 800);}, function(){$(this).stop(true).animate({opacity: 0.2}, 800);});
+      }
+
+      $.cookie('welcome', 'not_animated', {expires: 7 });
+    });
+  </script>
+</head>
+<body>
+  <a class="reset" href=""></a>
+  <div id="container">
+    <div id="header">
+      <p><img src="./images/alex-cican.jpg" alt="avatar" /></p>
+      <h1>Hi, I&#8217;m <a href="https://twitter.com/sican" target="_blank" title="Alex Cican on Twitter">Alex</a>.</h1>
+      <h2>Not this <a href="https://twitter.com/alexanderclare" target="_blank" title="Alex Clare on Twitter">Alex</a>, nor this <a href="https://twitter.com/anm" target="_blank" title="Alex McCauley on Twitter">Alex</a>, <span>and certainly not this <a href="https://twitter.com/SirAlexFerguson" target="_blank" title="Alex Ferguson on Twitter">Alex</a></span>. <br/>I love making stuff&mdash;especially websites. <br/>I think we should talk.</h2>
+    </div>
+
+    <div id="content">
+      <div class="left">
+        <h3>Let&#8217;s talk about me</h3>
+        <p>I am a web designer and developer who creates engaging experiences for the web. I am intrigued by responsive websites, clean and semantic code, and pixel-perfect designs.</p>
+        <p>Blame my character, but there are a million things I want to try, to do, and to get better at. When not designing, I write about <a href="http://blog.sicanstudios.com" target="_blank" title="SicanStudios Blog">coding and design</a>, I take <a href="http://flickr.com/sican" target="_blank" title="Alex Cican on Flickr">photographs</a>, and make <a href="http://vimeo.com/sican" target="_blank" title="Alex Cican on Vimeo">videos &amp; animations</a>. I also love playing football, my bass guitar, and travelling&mdash;just returned from a three month trip across Europe. There&#8217;s never enough time for everything, though I&#8217;m really trying.</p>
+        <p>I work at <a href="http://sicanstudios.com" target="_blank" title="SicanStudios">SicanStudios</a>, which is my own portal from where I craft web experiences for clients and for fun. Some call it &#8220;freelancing&#8221;. I call it &#8220;the best way to learn and become a pro&#8221;. Freelancing has shaped me into this &#8220;<a href="http://en.wikipedia.org/wiki/MacGyver" target="_blank" title="MacGyver">MacGyver</a>&#8221; of the web. To survive as a freelancer, you have to be good at many things from designing and coding, to being organised and self-motivated. </p>
+        <p>SicanStudios is a great place to work. I pursue only exciting projects, I have creative freedom, and the salary is good. I cannot think of anything that would keep me from working here a very long time. But I always want more. Not necessarily stuff or money, but I want to learn more, influence more, and get better. I want to keep the pressure up. I want to take on the toughest labours, and challenge the status quo.</p>
+      </div>
+
+      <div class="right">
+        <h3>Let&#8217;s talk about you</h3>
+        <p>You are Twitter. With just 140 characters you managed to <strong><a href="http://thenextweb.com/twitter/2012/12/18/twitter-now-has-200-million-monthly-active-users-up-60-million-in-9-months/" target="_blank" title="200 million active users on Twitter">attract millions</a></strong> of people, world leaders, and celebrities to use your social network. And <strong><a href="http://www.mediabistro.com/alltwitter/smart-twitter-users_b30041" target="_blank" title="The Smartest People Prefer Twitter To LinkedIn And Facebook">we prefer you</a></strong> over other networks. You have created a <strong>world-class</strong>, engaging, and addictive product that has radically changed the world.</p>
+        <p>That&#8217;s why you need <strong>the best</strong>. You need a MacGyver who is not intimidated by your success, nor is afraid to get his hands dirty; one who will improve and help define the Twitter experience.</p>
+        <p>I&#8217;ll be honest. I didn&#8217;t make this page lightly, and I&#8217;ve spent some time considering whether or not to really go for this. This is a high-profile job at a company that is put on <strong><a href="http://www.underconsideration.com/brandnew/archives/the_best_and_worst_identities_of_2012_part_i_the_best.php" target="_blank" title="Twitter #6 best identity of 2012">a pedestal by the web community</a></strong>. Creating interactive experiences across platforms that will be used by many, and acting as an evangelist for UI best practices is not a stroll in the park&mdash; it&#8217;s a tough challenge. This job requires <strong>superb organisational skills</strong>, <strong>crazy attention to detail</strong>, and <strong><a href="http://www.youtube.com/watch?v=y-AXTx4PcKI&feature=player_detailpage#t=331s" target="_blank" title="Alec Baldwin in Glengarry Glen Ross">brass balls</a></strong>.</p>
+        <p>I&#8217;m that guy. I love <strong>challenges</strong>. I love the idea of working with brilliant people, whom I admire and respect, on a product I use daily. I know the <strong>hard work</strong> and <strong>dedication</strong> that it takes to create something great, and I look forward to making Twitter better with my addition to the flock.</p>
+      </div>
+
+      <div class="center">
+        <h3>22 December 2012</h3>
+        <p>Survived the Apocalypse. Decided to apply at Twitter. <a href="https://twitter.com/search?q=%23yolo" target="_blank" title="Twitter results for #yolo">#yolo</a></p>
+      </div>
+
+      <div id="first">
+        <p class="calendar"><img src="./images/mayan-calendar.png" alt="mayan calendar" /></p>
+        <h3>21 December 2012</h3>
+        <p><span>End</span> of the world</p>
+      </div>
+
+      <div class="center">
+        <h3>Pretty designs</h3>
+        <div>
+          <a class="fancybox img" href="./images/alex-large.jpg"><img src="./images/alex-small.jpg" alt="alex cican portfolio" /></a>
+          <p><strong>AlexCican (2013) &ndash; Personal website &amp; blog</strong><br/><a href="http://dl.dropbox.com/u/48552248/websites/alexcican/index.html" target="_blank" title="Visit website">Visit website</a></p>
+        </div>
+
+        <div>
+          <a class="fancybox img" href="./images/hopin-large.jpg"><img src="./images/hopin-small.jpg" alt="sicanstudios portfolio" /></a>
+          <p><strong>HopIn Inc. (2012) &ndash; Company website</strong><br/><a href="http://hop.in" target="_blank" title="Visit website">Visit website</a></p>
+        </div>
+
+        <div>
+          <a class="fancybox img" href="./images/mailer-large.jpg"><img src="./images/mailer-small.jpg" alt="mailer portfolio" /></a>
+          <p><strong>Mailer (2012) &ndash; iOS email client</strong><br/><a href="http://rnailer.com" target="_blank" title="Visit website">Visit website</a></p>
+        </div>
+
+        <div>
+          <a class="fancybox img" href="./images/sicanstudios-large.jpg"><img src="./images/sicanstudios-small.jpg" alt="sicanstudios portfolio" /></a>
+          <p><strong>Sicanstudios (2012) &ndash; Design website &amp; blog</strong><br/><a href="http://sicanstudios.com" target="_blank" title="Visit website">Visit website</a></p>
+        </div>
+
+        <div>
+          <a class="fancybox img" href="./images/cartalyst-large.jpg"><img src="./images/cartalyst-small.jpg" alt="cartalyst portfolio" /></a>
+          <p><strong>Cartalyst (2012) &ndash; Company website &amp; blog</strong><br/><a href="http://cartalyst.com" target="_blank" title="Visit website">Visit website</a> &bull; <a href="http://sicanstudios.com/work/cartalyst.html" target="_blank" title="Read case study">Read case study</a></p>
+        </div>
+
+        <div>
+          <a class="fancybox img" href="./images/brianjcosborne-large.jpg"><img src="./images/brianjcosborne-small.jpg" alt="brianjcosborne portfolio" /></a>
+          <p><strong>Brian JC (2012) &ndash; Photography website</strong><br/><a href="http://brianjcosborne.com" target="_blank" title="Visit website">Visit website</a> &bull; <a href="http://sicanstudios.com/work/brianjcosborne.html" target="_blank" title="Read case study">Read case study</a></p>
+        </div>
+
+        <div>
+          <a class="fancybox img" href="./images/timewasted-large.jpg"><img src="./images/timewasted-small.jpg" alt="timewasted portfolio" /></a>
+          <p><strong>TimeWasted (2011) &ndash; Mobile web app</strong><br/><a href="http://timewasted.co.uk" target="_blank" title="Visit website">Visit website</a> &bull; <a href="http://sicanstudios.com/work/experiments.html#timewasted" target="_blank" title="Read case study">Read case study</a></p>
+        </div>
+
+        <div>
+          <a class="fancybox img" href="./images/alt-foundry-large.jpg"><img src="./images/alt-foundry-small.jpg" alt="alt foundry portfolio" /></a>
+          <p><strong>Alt-Foundry (2011) &ndash; Typeface website &amp; blog</strong><br/><a href="http://alt-foundry.com" target="_blank" title="Visit website">Visit website</a> &bull; <a href="http://sicanstudios.com/work/alt-foundry.html" target="_blank" title="Read case study">Read case study</a></p>
+        </div>
+
+        <div>
+          <a class="fancybox-media img" href="http://youtu.be/PxaV7u0VTxg"><img src="./images/depravity-small.jpg" alt="motion design" /></a>
+          <p><strong>Depravity (2011) &ndash; Motion and audio design</strong><br/><a href="http://youtu.be/PxaV7u0VTxg" target="_blank" title="Watch this video">Watch this video</a> &bull; <a href="http://www.youtube.com/watch?v=DBCnYbgnID0&list=PLjhZ2xEhvYzLEwlaCQdzIGzN6pRD0rAVO" target="_blank" title="Watch more motion videos">Watch more motion videos</a></p>
+        </div>
+
+        <div>
+          <a class="fancybox img" href="./images/twitter-large.jpg"><img src="./images/twitter-small.jpg" alt="twitter portfolio" /></a>
+          <p><strong>Twitter (2011) &ndash; Skeuomorphic CSS3 Experiment</strong><br/><a href="http://dl.dropbox.com/u/48552248/websites/demos/twitter_button/index.html" target="_blank" title="Visit experiment">Visit experiment</a> &bull; <a href="http://sicanstudios.com/work/experiments.html#twitter" target="_blank" title="Read case study">Read case study</a></p>
+        </div>
+      </div>
+
+      <div class="left">
+        <h3>What people say about me</h3>
+        <p><strong><a href="http://cartalyst.com" target="_blank" title="Dan Syme">Dan Syme</a> (Cartalyst Co-Founder)</strong><br/>
+          &#8220;Easily one of the best designers I have had the pleasure of working with&#8221;.
+        </p>
+        <p><strong><a href="http://brianjcosborne.com" target="_blank" title="Brian JC Osborne">Brian JC Osborne</a> (Photographer)</strong><br/>
+          &#8220;He has a deep understanding of the web and the tools needed to build a professional website&#8221;.
+        </p>
+        <p><strong><a href="http://alt-foundry.com" target="_blank" title="Andreas Leonidou">Andreas Leonidou</a> (Alt-Foundry Founder)</strong><br/>
+          &#8220;His knowledge on user behavior helped me drive my sales up&#8221;.
+        </p>
+        <p><strong><a href="http://magictoys.it" target="_blank" title="Dario Lops">Dario Lops</a> (MagicToys Founder)</strong><br/>
+          &#8220;I liked the professional and powerful combination of the strong graphic impact with the elegance of the design of this designer&#8221;.
+        </p>
+        <p><strong><a href="http://www.corentin-larsen.com" target="_blank" title="Corentin Larsen">Corentin Larsen</a> (Musician)</strong><br/>
+          &#8220;I like his job because I could modify easily the website. He also replied quickly to my requests&#8221;.
+        </p>
+        <p><strong><a href="http://firatayas.com" target="_blank" title="Firat Ayas">Firat Ayas</a> (Photographer)</strong><br/>
+          &#8220;Alex did a great job and I am completely happy with the website&#8221;.
+        </p>
+        <p><strong><a href="https://twitter.com/sican/favorites" target="_blank" title="Twitter says about Alex Cican">More comments about me.</a></strong></p>
+      </div>
+
+      <div class="center">
+        <h3>09 February 2009</h3>
+        <p>Created my first Twitter account.</p>
+      </div>
+
+      <div class="last">
+        <h4>Let&#8217;s talk</h4>
+        <h5><a href="https://twitter.com/sican" target="_blank" title="Alex Cican on Twitter">twitter.com/sican</a> &bull; <a href="skype:alex.cican?chat" target="_blank" title="Alex Cican on Skype">alex.cican</a></h5>
+        <p>Resum&#233;? <strong><a href="http://jobs.sicanstudios.com/resume/" title="Alex Cican’s resumé">Get it here</a></strong>.</p>
+      </div>
+    </div><!--end div_content-->
+
+    <footer>
+      <p><a href="#" title="Back to Top">Back to Top</a> &bull; <a href="http://jobs.sicanstudios.com/resume/" title="Alex Cican’s resumé">Resum&#233;</a> &bull; <a href="mailto:&#097;&#108;&#101;&#120;&#064;&#115;&#105;&#099;&#097;&#110;&#115;&#116;&#117;&#100;&#105;&#111;&#115;&#046;&#099;&#111;&#109;" title="Get in Touch">Get in Touch</a><br/>
+        Made by <a href="http://twitter.com/sican" target="_blank" title="Alex Cican on Twitter">Alex Cican</a>. Source code available on <a href="https://github.com/sican/jobs/tree/gh-pages/twitter" target="_blank" title="Source code on GitHub">GitHub</a>.<br/>
+        Credits: <a href="http://www.sport-it.net/will-mourinho-be-sir-alex-fergusons-successor" target="_blank" title="Alex Ferguson image">Alex Ferguson</a>, <a href="http://kaptinkobe15.edublogs.org/2011/02/17/research-report-mayan-calendar/" target="_blank" title="Mayan calendar">Mayan calendar</a>.
+      </p>
+    </footer>
+  </div>
+
+  <!-- Loads FancyBox script for website images -->
+  <link rel="stylesheet" href="./fancybox/jquery.fancybox.css?v=2.1.3" type="text/css" media="screen" />
+  <script src="./fancybox/jquery.fancybox.pack.js?v=2.1.3"></script>
+  <script src="./fancybox/helpers/jquery.fancybox-media.js?v=1.0.5"></script>
+
+  <script>
+    $(document).ready(function() {
+      if (navigator.userAgent.match(/iPhone/i)) {
+        /* removes condensed letter spacing */
+        $("h2, h3").css("letter-spacing", "0");
+      }
+
+      /* width specific adjustments */
+      var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+      if (width < "768") {
+        /* hides extra content */
+        $("footer span").hide();
+
+        /* hides Safari address bar on iPhone */
+        if ($("body").hasClass("animated")) {
+          //do nothing
+        } else {
+          window.addEventListener("load",function() {
+            setTimeout(function() {
+              window.scrollTo(0, 1);
+            }, 400);
+          });
+        }
+      } else {
+        /* aligns-left big heading with rest of text */
+        $("#header h1").css("margin-left", "-0.055em");
+
+        /* changes the avatar of hover */
+        var cican = "./images/alex-cican.jpg";
+        var ferguson = "./images/alex-ferguson.jpg";
+        $("#header p img").attr("src", ferguson);
+
+        $("#header p img").hover(function(){
+          $(this).attr("src", cican);
+          /* replaces text in header */
+          $("#header span").html('but most certainly this <a href="https://twitter.com/sican" target="_blank" title="Alex Cican on Twitter">Alex</a>');
+        },
+        function(){
+          $(this).attr("src", ferguson);
+          /* replaces text in header */
+          $("#header span").html('and certainly not this <a href="https://twitter.com/SirAlexFerguson" target="_blank" title="Alex Ferguson on Twitter">Alex</a>');
+        });
+
+        /* preloads avatars */
+        var cache = new Array();
+        $("#header p img").each(function(){
+          var cacheImage = document.createElement("img");
+          cacheImage.src = cican;
+          cache.push(cacheImage);
+        });
+      }
+
+      /* Initiates script for loading website images */
+      $(".fancybox").fancybox();
+      $('.fancybox-media').fancybox({
+        openEffect  : 'none',
+        closeEffect : 'none',
+        helpers : {
+          media : {}
+        }
+      });
+
+      /* browser specific adjustments */
+      var chrome = navigator.userAgent.match(/Chrome/i) != null;
+      if(chrome) {
+        $("#content").addClass("chrome");
+      }
+     });
+  </script>
+
+  <script>
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-6273751-7']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+</body>
+</html>
