@@ -513,7 +513,7 @@ body > section > h2 {
 }
 
 .about:after {
-  content: 'Read More…';
+  content: 'Read More\2026';
   font-weight: bold;
   position: absolute;
   width: 100%;
@@ -789,6 +789,20 @@ button.previous, button.next {
   color: #aaa;
 }
 
+.visited_places {
+  position: relative;
+}
+
+.visited_places h2 {
+  text-align: center;
+}
+
+#map {
+  margin: 1.6em 0;
+  width: 100%;
+  height: 450px;
+}
+
 .twitter {
   text-align: center;
 }
@@ -796,7 +810,6 @@ button.previous, button.next {
 footer {
   padding: 0 0 1em;
 }
-
 
 
 /*** ABOVE 768px ***/

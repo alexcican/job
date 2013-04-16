@@ -2,7 +2,7 @@
 This repo and its content is copyrighted by Alex Cican. You may not reuse anything therein without my written permission.
 
 ## License
-All folders found inside this repo “jobs”, are licensed under the BSD 3-Clause License.
+All folders found inside this repo “job”, are licensed under the BSD 3-Clause License.
 
 The BSD 3-Clause License (BSD)
 Copyright (c) 2013, Alex Cican.

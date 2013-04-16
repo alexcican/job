@@ -12,6 +12,8 @@
   <link rel="stylesheet" type="text/css" href="./style/style.min.css" />
   <link rel="stylesheet" type="text/css" href="./style/profile.min.css" />
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+  <script src='http://api.tiles.mapbox.com/mapbox.js/v0.6.7/mapbox.js'></script>
+  <link href='http://api.tiles.mapbox.com/mapbox.js/v0.6.7/mapbox.css' rel='stylesheet' />
 </head>
 <body>
   <nav>
@@ -156,6 +158,11 @@
     </div>
   </section>
 
+  <div class="visited_places">
+    <h2>Places I&rsquo;ve stayed</h2>
+    <iframe id="map" width='500' height='300' frameBorder='0' src='http://a.tiles.mapbox.com/v3/sican.map-l9nphrqm.html#4/45.243916767416295/24.442292968749978'></iframe>
+  </div>
+
   <section class="twitter">
     <a href="https://twitter.com/share" class="twitter-share-button" data-via="sican" data-size="large" data-dnt="true">Tweet</a>
     <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
@@ -202,7 +209,7 @@
       var refferal = document.referrer;
       // if (refferal.match(/^http:\/\/([^\/]+\.)?sicanstudios\.com(\/|$)/i)) {
       if (refferal.match(/(http:\/\/)?([^.]+)\.sicanstudios\.com/)) {
-        $('footer p').prepend('<a href="http://jobs.sicanstudios.com/resume/" title="Alex Cican’s resumé">Resum&#233;</a> &bull; <a href="mailto:&#097;&#108;&#101;&#120;&#064;&#115;&#105;&#099;&#097;&#110;&#115;&#116;&#117;&#100;&#105;&#111;&#115;&#046;&#099;&#111;&#109;" title="Get in Touch">Get in Touch</a> &bull;<a href="#" title="Back to Top">Back to Top</a><br/>');
+        $('footer p').prepend('<a href="http://job.sicanstudios.com/resume/" title="Alex Cican’s resumé">Resum&#233;</a> &bull; <a href="mailto:&#097;&#108;&#101;&#120;&#064;&#115;&#105;&#099;&#097;&#110;&#115;&#116;&#117;&#100;&#105;&#111;&#115;&#046;&#099;&#111;&#109;" title="Get in Touch">Get in Touch</a> &bull;<a href="#" title="Back to Top">Back to Top</a><br/>');
       }
 
       // do nothing for empty links
@@ -251,12 +258,18 @@
         adjustHeight();
       }, 1100)
 
+      // make map fit the width of browser’s screen
+      // $('.visited_places iframe').attr('width', width);
+
       // adjusts height of listing according to image
       function adjustHeight() {
+        var width = $(window).width();
         if (width > 767) {
           var image_height = $('.listing img').height();
           $('.listing').css('height', image_height);
         }
+
+        $('.visited_places iframe').attr('width', width);
       }
 
       // keyboard shortcuts
@@ -271,7 +284,7 @@
     });
   </script>
 
-  <script type="text/javascript">
+  <!--script type="text/javascript">
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-6273751-7']);
     _gaq.push(['_trackPageview']);
