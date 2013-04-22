@@ -56,6 +56,7 @@ button.next:before{content:'>'}button.previous:hover:before,button.next:hover:be
 .right_positioned_buttons{right:5%;font-size:1em;top:45%;bottom:auto;left:auto;width:27%;z-index:100;opacity:0;-webkit-transition:all .2s;-moz-transition:all .2s;-o-transition:all .2s;transition:all .2s}
 .book_button,.save_wishlist_button{width:100%}.save_wishlist_button{background:rgba(255,255,255,.3)}#reviews{padding:0 5%}.review{min-height:180px}.review>a{width:auto;margin-bottom:1.6em}
 .review:nth-child(2n){margin-left:0;text-align:right}.review:nth-child(2n)>a{float:right;margin-right:0;margin-left:1em}.review>a img{width:auto;margin-bottom:.4em}
+.swipe{overflow:hidden;visibility:hidden;position:relative}.swipe-wrap{overflow:hidden;position:relative}.swipe-wrap>div{float:left;width:100%;position:relative}
 }@media screen and (min-width:1024px){#cover_header{min-height:550px;-webkit-background-size:cover!important;-moz-background-size:cover!important;-o-background-size:cover!important;background-size:cover!important}
 body>section{margin-bottom:4em;padding:0 15%;position:relative}.logo{left:8%}.align_right{right:8%}.popular_searches{height:190px;margin-bottom:-14em}
 .profile_pic img{width:225px}.about{margin-top:1em;max-height:193px}.contact{margin-bottom:-.8em;top:0}.user_stats{right:14%}.user_stats p{padding:4px 15px}

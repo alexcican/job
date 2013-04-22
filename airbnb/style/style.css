@@ -379,18 +379,18 @@ footer a, footer a:visited {
   }
 }
 
-.swipe {
+.designs .swipe {
   overflow: hidden;
   visibility: hidden;
   position: relative;
 }
 
-.swipe-wrap {
+.designs .swipe-wrap {
   overflow: hidden;
   position: relative;
 }
 
-.swipe-wrap > div {
+.designs .swipe-wrap > div {
   float: left;
   width: 100%;
   position: relative;

@@ -21,4 +21,4 @@ h2,h3{font-size:1.6em}#home-slides{font-weight:100;font-size:3.8em}#home-slides 
 .designs button.next{left:auto;right:-14.5%}footer{padding-top:3.2em}}@media screen and (min-width:1024px){#home-slides{font-size:4em}#home-slides p{width:55%}
 #home-slides div:nth-of-type(1){background:url("../images/alex-bg@2x.jpg") 50% 0 no-repeat fixed}#home-slides div:nth-of-type(2){background:url("../images/bud-bg@2x.jpg") 50% 0 no-repeat fixed}
 #home-slides div:nth-of-type(3){background:url("../images/par-bg@2x.jpg") 50% 0 no-repeat fixed}.designs{width:1000px;margin-left:-27%}.designs button.previous,.designs button.next{top:35%}
-footer{padding-bottom:0}}.swipe{overflow:hidden;visibility:hidden;position:relative}.swipe-wrap{overflow:hidden;position:relative}.swipe-wrap>div{float:left;width:100%;position:relative}
+footer{padding-bottom:0}}.designs .swipe{overflow:hidden;visibility:hidden;position:relative}.designs .swipe-wrap{overflow:hidden;position:relative}.designs .swipe-wrap>div{float:left;width:100%;position:relative}
