@@ -1,7 +1,7 @@
 /*** GLOBAL ***/
 /**************/
 body {
-  font: 18px/1.6 "Open Sans", Helvetica, sans-serif;
+  font: 18px/1.6 Avenir, "Open Sans", Helvetica, sans-serif;
   background: #fff;
   color: #555;
   width: 90%;
@@ -11,25 +11,25 @@ body {
 }
 
 ::-moz-selection {
-  background: #ffb800;
+  background: #c80909;
   color: #fff;
 }
 
 ::selection {
-  background: #ffb800;
+  background: #c80909;
   color: #fff;
 }
 
 /* animations */
 a, a:visited, footer {
-  -moz-transition: color 0.5s, background 0.5s, border 0.5s, opacity 0.5s, text-shadow 0.5s;
-  -webkit-transition: color 0.5s, background 0.5s, border 0.5s, opacity 0.5s, text-shadow 0.5s;
-  -o-transition: color 0.5s, background 0.5s, border 0.5s, opacity 0.5s, text-shadow 0.5s;
-  transition: color 0.5s, background 0.5s, border 0.5s, opacity 0.5s, text-shadow 0.5s;
+  -moz-transition: color .5s;
+  -webkit-transition: color .5s;
+  -o-transition: color .5s;
+  transition: color .5s;
 }
 
 a, a:visited, footer:hover a, footer:hover a:visited {
-  color: #cc9900;
+  color: #c80909;
   text-decoration: none;
 }
 
@@ -54,38 +54,42 @@ a:hover, a:visited:hover, footer a:hover, footer a:visited:hover {
 
 h1 {
   font-size: 2.8em;
-  line-height: 0.8em;
+  line-height: .8em;
   color: #555;
   font-weight: 100;
-  margin: 0 0 0.5em;
+  margin: 0 0 -.3em;
 }
 
 h2, h3 {
   font-size: 1.1em;
   font-weight: 100;
   line-height: 1.5;
-  padding: 0.7em 0 0;
+  padding: .7em 0 0;
   color: #666;
 }
 
 p {
-  margin-bottom: 0.7em;
+  margin-bottom: .7em;
 }
 
-h3, strong {
+h3 {
   color: #666;
   font-weight: 600;
 }
 
 ul, ol {
   padding: 0;
-  margin-bottom: 0.7em;
-  list-style-type:circle;
+  margin-bottom: .7em;
+  list-style-type: circle;
 }
 
 ul li, ol li {
   margin-left: 1.15em;
-  padding-left: 0.5em;
+  padding-left: .5em;
+}
+
+strong {
+  font-weight: 500;
 }
 
 /*** HEADER ***/
@@ -100,13 +104,13 @@ ul li, ol li {
 #top a {
   color: #ccc;
   display: inline-block;
-  padding: 1.6em 0.8em;
-  margin: 0 -0.2em;
+  padding: 1.6em .8em;
+  margin: 0 -.2em;
   position: relative;
 }
 
 #top a:hover {
-  color: #cc9900;
+  color: #c80909;
   text-decoration: none;
 }
 
@@ -119,7 +123,7 @@ ul li, ol li {
 /**************/
 
 .columns span {
-  font-size: 0.785em;
+  font-size: .785em;
   color: #ccc;
   font-weight: 600;
 }
@@ -128,10 +132,11 @@ ul li, ol li {
 /**************/
 
 footer {
-  padding: 2.5% 0;
-  font-size: 0.875em;
+  color: #aaa;
+  padding: 1% 0;
+  font-size: .875em;
   line-height: 1.6;
-  opacity: 0.5;
+  opacity: .5;
 }
 
 footer:hover {
@@ -154,19 +159,19 @@ footer a, footer a:visited {
 
 @media screen and (min-width: 768px){
   body {
-    font-size: 20px;
+    font-size: 22px;
   }
 
   h1 {
-    font-size: 5em;
-    letter-spacing: -0.03em;
-    margin: 0.3em 0 -0.1em;
+    font-size: 5.2em;
+    letter-spacing: -.04em;
+    margin: .3em 0 -.1em;
   }
 
   h2, h3 {
     font-size: 1.6em;
-    margin-bottom: 0.7em;
-    letter-spacing: -0.04em;
+    margin-bottom: .7em;
+    letter-spacing: -.04em;
   }
 
   p, ul, ol {
@@ -186,12 +191,13 @@ footer a, footer a:visited {
   }
 
   .columns span {
-    font-size: 0.7em;
-    width: 80px;
+    font-size: .7em;
+    width: 83px;
     text-align: right;
+    letter-spacing: -.04em;
     position: absolute;
-    top: 0.4em;
-    left: -0.1em;
+    top: .39em;
+    left: -.15em;
   }
 }
 
@@ -201,12 +207,12 @@ footer a, footer a:visited {
 
 @media screen and (min-width: 1024px){
   h2, h3 {
-    font-size: 1.4em;
+    font-size: 1.25em;
     line-height: 1.5;
   }
 
   #top a {
-    padding: 2.4em 0.8em;
+    padding: 2.4em .8em;
   }
 
   .columns {
