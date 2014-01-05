@@ -164,14 +164,14 @@ footer a, footer a:visited {
 
   h1 {
     font-size: 5.2em;
-    letter-spacing: -.04em;
+    letter-spacing: -.02em;
     margin: .3em 0 -.1em;
   }
 
   h2, h3 {
     font-size: 1.6em;
     margin-bottom: .7em;
-    letter-spacing: -.04em;
+    letter-spacing: -.02em;
   }
 
   p, ul, ol {
@@ -194,7 +194,7 @@ footer a, footer a:visited {
     font-size: .7em;
     width: 83px;
     text-align: right;
-    letter-spacing: -.04em;
+    letter-spacing: -.02em;
     position: absolute;
     top: .39em;
     left: -.15em;
