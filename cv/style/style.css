@@ -77,6 +77,10 @@ h3 {
   font-weight: 600;
 }
 
+.subheading {
+  font-weight: 500;
+}
+
 ul, ol {
   padding: 0;
   margin-bottom: .7em;

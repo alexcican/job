@@ -1,59 +1,64 @@
 body, #content {
-	font-size: 10pt !important;
-	color: #111 !important;
-	width: 100%;
-	margin-top: 2em;
+  font-size: 10pt !important;
+  color: #111 !important;
+  width: 100%;
+  margin-top: 2em;
 }
 
 strong {
-	color: #333 !important;
+  color: #333 !important;
 }
 
 .hide, nav, footer {
-	display: none !important;
+  display: none !important;
 }
 
 a:link, a:visited {
-	color: #3679af;
-	text-decoration: underline;
+  color: #3679af;
+  text-decoration: underline;
 }
 
 body img {
-	width: 99%;
+  width: 99%;
 }
 
 h1 {
-	font-size: 3.2em;
+  font-size: 5em;
 }
 
 #header h2 {
-	font-size: 1.5em;
-	margin: -0.6em 0 -1em;
+  font-size: 1.5em;
+  margin: .4em 0 -1em;
 }
 
 #header, #header h1, #header h2 {
-	color: #333;
+  color: #333;
 }
 
 h3 {
-	font-size: 1.5em;
-	margin: 0 0 -0.3em;
-	color: #333;
+  font-size: 1.5em;
+  margin: 0 0 -.3em;
+  color: #444;
 }
 
-#header h1:after {
-	content: " alex@alexcican.com";
-	-moz-opacity: 0.15;
-	-webkit-opacity: 0.15;
-	filter:alpha(opacity=15);
-	opacity: 0.15;
+#header h2:after {
+  content: " \2022  alex@alexcican.com";
+  font-weight: 500;
+/*  -moz-opacity: .2;
+  -webkit-opacity: .2;
+  filter:alpha(opacity=2);
+  opacity: .2;*/
 }
 
 #header {
-	margin-bottom: -0.8em;
+  margin-bottom: -.8em;
 }
 
 #print {
-	padding-top: 1.6em;
-	display: block !important;
+  padding-top: 1.6em;
+  display: block !important;
+}
+
+.columns > span {
+  font-weight: 100;
 }
