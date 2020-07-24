@@ -5,11 +5,32 @@
   <title>Test</title>
 </head>
 <body>
-  <div id="results">0</div>
-
+  <input type="number" id="u-input" onkeyup="runIt()"/>
+  <div id="results"></div>
   <script>
-    var d = new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit', second:'2-digit'});
-    document.getElementById("results").innerHTML += d;
+    var localStorageNum = JSON.parse(window.localStorage.getItem('finalNum'));
+
+    if (localStorageNum === null) {
+      // do nothing
+    } else {
+      var localStorageD = JSON.parse(window.localStorage.getItem('d'));
+      var newD = new Date().toLocaleTimeString([], {minute:'2-digit'});
+      var finalNum = newD - localStorageD;
+      document.getElementById("results").innerHTML = finalNum;
+      writeLS(finalNum, localStorageD);
+    }
+
+    function runIt() {
+      var d = new Date().toLocaleTimeString([], {minute:'2-digit'});
+      var userNum = document.getElementById("u-input").value;
+      var finalNum = document.getElementById("results").innerHTML = d - userNum;
+      writeLS(finalNum, d);
+    }
+
+    function writeLS(finalNum, d) {
+      window.localStorage.setItem('finalNum', JSON.stringify(finalNum));
+      window.localStorage.setItem('d', JSON.stringify(d));
+    }
   </script>
 </body>
 </html>
